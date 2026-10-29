@@ -4,4 +4,3 @@ requests
 pandas
 Babel
 deep-translator
-pycountry
