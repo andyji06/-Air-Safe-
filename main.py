@@ -9,7 +9,7 @@ from datetime import datetime
 st.set_page_config(
     page_title="Air Safe",
     page_icon="✈️",
-    layout="wide"
+    layout="wide",
 )
 
 AIRPORT_URL = (
@@ -40,8 +40,8 @@ TEXT = {
         "subtitle": "항공 안전 · 공항 기상 모니터링",
         "country": "국가 선택",
         "search": "공항 검색",
-        "search_hint": "한국어·영어 공항명, 도시명, IATA·ICAO 코드",
-        "recommend": "⭐ 추천 공항",
+        "search_hint": "인천, 김포, 제주, 공항명, 도시명, IATA·ICAO 코드",
+        "recommend": "추천 공항",
         "recommend_desc": "선택한 국가의 주요 공항입니다.",
         "airport": "공항 선택",
         "weather": "현재 공항 기상",
@@ -59,23 +59,24 @@ TEXT = {
         "choose": "이 공항 선택",
         "count": "검색 가능한 공항",
         "no_match": "검색 결과가 없습니다. 다른 이름이나 공항 코드를 입력해 보세요.",
-        "loading": "공항 정보를 불러오는 중...",
+        "loading": "공항 정보를 불러오는 중입니다...",
         "weather_error": "기상 정보를 불러오지 못했습니다.",
         "unknown": "정보 없음",
         "advice": "기상 참고 안내",
         "safe": "표시된 날씨에서 뚜렷한 주의 신호가 감지되지 않았습니다.",
         "caution": "기상 조건에 주의가 필요할 수 있습니다.",
         "danger": "기상 조건이 항공 운항에 영향을 줄 가능성이 있습니다.",
-        "disclaimer": "이 정보는 참고용입니다. 실제 운항 가능 여부나 비행 허가를 판단하지 않습니다. 공식 항공 기상 정보와 운항 절차를 따라야 합니다.",
+        "disclaimer": "이 정보는 참고용입니다. 실제 운항 가능 여부를 판단하지 않습니다. 공식 항공 기상 정보와 운항 절차를 따라야 합니다.",
         "source": "데이터 출처",
         "updated": "관측 시각",
+        "map": "공항 위치",
     },
     "en": {
         "subtitle": "Aviation Safety · Airport Weather Monitoring",
         "country": "Select country",
         "search": "Search airports",
         "search_hint": "Airport, city, IATA or ICAO code",
-        "recommend": "⭐ Recommended Airports",
+        "recommend": "Recommended Airports",
         "recommend_desc": "Major airports in the selected country.",
         "airport": "Select airport",
         "weather": "Current Airport Weather",
@@ -90,8 +91,8 @@ TEXT = {
         "feels": "Feels Like",
         "pressure": "Pressure",
         "direction": "Wind Direction",
-        "choose": "Select Airport",
-        "count": "Airports available",
+        "choose": "Select airport",
+        "count": "Available airports",
         "no_match": "No results found. Try another name or airport code.",
         "loading": "Loading airport data...",
         "weather_error": "Unable to load weather data.",
@@ -100,16 +101,17 @@ TEXT = {
         "safe": "No major caution signal detected in the displayed weather.",
         "caution": "Weather conditions may require attention.",
         "danger": "Weather conditions may affect aviation operations.",
-        "disclaimer": "For reference only. This does not determine flight clearance or operational suitability. Follow official aviation weather reports and procedures.",
-        "source": "Data Sources",
+        "disclaimer": "For reference only. This does not determine flight clearance. Follow official aviation weather reports and procedures.",
+        "source": "Data sources",
         "updated": "Observation time",
+        "map": "Airport location",
     },
     "ja": {
         "subtitle": "航空安全・空港気象モニタリング",
         "country": "国を選択",
         "search": "空港を検索",
         "search_hint": "空港名、都市名、IATA・ICAOコード",
-        "recommend": "⭐ おすすめ空港",
+        "recommend": "おすすめ空港",
         "recommend_desc": "選択した国の主要空港です。",
         "airport": "空港を選択",
         "weather": "現在の空港気象",
@@ -137,13 +139,14 @@ TEXT = {
         "disclaimer": "参考情報です。実際の運航可否を判断するものではありません。公式情報と手順に従ってください。",
         "source": "データ提供元",
         "updated": "観測時刻",
+        "map": "空港の位置",
     },
     "zh": {
         "subtitle": "航空安全 · 机场天气监测",
         "country": "选择国家",
         "search": "搜索机场",
         "search_hint": "机场名称、城市、IATA或ICAO代码",
-        "recommend": "⭐ 推荐机场",
+        "recommend": "推荐机场",
         "recommend_desc": "所选国家的主要机场。",
         "airport": "选择机场",
         "weather": "当前机场天气",
@@ -171,13 +174,14 @@ TEXT = {
         "disclaimer": "仅供参考，不能判断航班是否可以运行。请遵循官方航空天气信息和操作程序。",
         "source": "数据来源",
         "updated": "观测时间",
+        "map": "机场位置",
     },
     "es": {
         "subtitle": "Seguridad aérea · Meteorología aeroportuaria",
         "country": "Seleccionar país",
         "search": "Buscar aeropuertos",
         "search_hint": "Aeropuerto, ciudad o código IATA/ICAO",
-        "recommend": "⭐ Aeropuertos recomendados",
+        "recommend": "Aeropuertos recomendados",
         "recommend_desc": "Principales aeropuertos del país.",
         "airport": "Seleccionar aeropuerto",
         "weather": "Meteorología actual",
@@ -202,16 +206,17 @@ TEXT = {
         "safe": "No se detectan señales importantes de precaución.",
         "caution": "Las condiciones pueden requerir atención.",
         "danger": "El tiempo podría afectar a las operaciones aéreas.",
-        "disclaimer": "Solo como referencia. No determina la autorización ni la viabilidad de un vuelo. Siga los informes oficiales.",
+        "disclaimer": "Solo como referencia. No determina la autorización de un vuelo. Siga los informes oficiales.",
         "source": "Fuentes de datos",
         "updated": "Hora de observación",
+        "map": "Ubicación del aeropuerto",
     },
     "fr": {
         "subtitle": "Sécurité aérienne · Météo des aéroports",
         "country": "Choisir un pays",
         "search": "Rechercher des aéroports",
         "search_hint": "Aéroport, ville ou code IATA/ICAO",
-        "recommend": "⭐ Aéroports recommandés",
+        "recommend": "Aéroports recommandés",
         "recommend_desc": "Principaux aéroports du pays.",
         "airport": "Choisir un aéroport",
         "weather": "Météo actuelle",
@@ -239,6 +244,7 @@ TEXT = {
         "disclaimer": "À titre indicatif uniquement. Ne détermine pas l'autorisation d'un vol. Suivez les bulletins officiels.",
         "source": "Sources des données",
         "updated": "Heure d'observation",
+        "map": "Emplacement de l'aéroport",
     },
 }
 
@@ -251,12 +257,15 @@ if "language" not in st.session_state:
 if "chosen_ident" not in st.session_state:
     st.session_state.chosen_ident = ""
 
+if "clear_search" not in st.session_state:
+    st.session_state.clear_search = False
+
 def t(key):
-    lang = st.session_state.language
-    return TEXT.get(lang, TEXT["en"]).get(key, key)
+    language = st.session_state.language
+    return TEXT.get(language, TEXT["en"]).get(key, key)
 
 # -------------------------------
-# Translation
+# Translation helpers
 # -------------------------------
 @st.cache_data(ttl=86400, show_spinner=False)
 def translate_text(text, language):
@@ -269,10 +278,11 @@ def translate_text(text, language):
         return text
 
     try:
-        return GoogleTranslator(
+        result = GoogleTranslator(
             source="auto",
-            target=TARGET_LANG[language]
-        ).translate(text) or text
+            target=TARGET_LANG[language],
+        ).translate(text)
+        return result or text
     except Exception:
         return text
 
@@ -284,7 +294,7 @@ def translate_query_to_english(query, language):
     try:
         return GoogleTranslator(
             source=TARGET_LANG[language],
-            target="en"
+            target="en",
         ).translate(query) or query
     except Exception:
         return query
@@ -292,9 +302,9 @@ def translate_query_to_english(query, language):
 @st.cache_data(ttl=86400, show_spinner=False)
 def localized_country_name(code, language):
     try:
-        name = Locale.parse(language).territories.get(code)
-        if name:
-            return str(name)
+        result = Locale.parse(language).territories.get(code)
+        if result:
+            return str(result)
     except Exception:
         pass
 
@@ -321,10 +331,8 @@ def load_airports():
 
     required = [
         "name", "municipality", "iso_country",
-        "iata_code", "gps_code", "ident",
-        "type", "scheduled_service",
-        "latitude_deg", "longitude_deg",
-        "elevation_ft",
+        "iata_code", "gps_code", "ident", "type",
+        "scheduled_service", "latitude_deg", "longitude_deg",
     ]
 
     for column in required:
@@ -333,8 +341,8 @@ def load_airports():
 
     for column in [
         "name", "municipality", "iso_country",
-        "iata_code", "gps_code", "ident",
-        "type", "scheduled_service",
+        "iata_code", "gps_code", "ident", "type",
+        "scheduled_service",
     ]:
         df[column] = df[column].fillna("").astype(str)
 
@@ -368,7 +376,7 @@ def airport_label(row, language):
     return name
 
 # -------------------------------
-# Weather data
+# Weather
 # -------------------------------
 @st.cache_data(ttl=600, show_spinner=False)
 def fetch_weather(latitude, longitude):
@@ -406,7 +414,7 @@ def fetch_weather(latitude, longitude):
                 range(len(times)),
                 key=lambda i: abs(
                     datetime.fromisoformat(times[i]) - current_time
-                )
+                ),
             )
             visibility = values[closest]
         except Exception:
@@ -415,27 +423,27 @@ def fetch_weather(latitude, longitude):
     return current, visibility
 
 WEATHER_CODES = {
-    0: {"ko": "맑음", "en": "Clear"},
-    1: {"ko": "대체로 맑음", "en": "Mainly clear"},
-    2: {"ko": "부분적으로 흐림", "en": "Partly cloudy"},
-    3: {"ko": "흐림", "en": "Overcast"},
-    45: {"ko": "안개", "en": "Fog"},
-    48: {"ko": "착빙성 안개", "en": "Freezing fog"},
-    51: {"ko": "약한 이슬비", "en": "Light drizzle"},
-    53: {"ko": "이슬비", "en": "Drizzle"},
-    55: {"ko": "강한 이슬비", "en": "Heavy drizzle"},
-    61: {"ko": "약한 비", "en": "Light rain"},
-    63: {"ko": "비", "en": "Rain"},
-    65: {"ko": "강한 비", "en": "Heavy rain"},
-    71: {"ko": "약한 눈", "en": "Light snow"},
-    73: {"ko": "눈", "en": "Snow"},
-    75: {"ko": "강한 눈", "en": "Heavy snow"},
-    80: {"ko": "소나기", "en": "Rain showers"},
-    81: {"ko": "강한 소나기", "en": "Heavy showers"},
-    82: {"ko": "매우 강한 소나기", "en": "Violent showers"},
-    95: {"ko": "뇌우", "en": "Thunderstorm"},
-    96: {"ko": "우박 동반 뇌우", "en": "Thunderstorm with hail"},
-    99: {"ko": "강한 우박 동반 뇌우", "en": "Heavy hail thunderstorm"},
+    0: ("맑음", "Clear"),
+    1: ("대체로 맑음", "Mainly clear"),
+    2: ("부분적으로 흐림", "Partly cloudy"),
+    3: ("흐림", "Overcast"),
+    45: ("안개", "Fog"),
+    48: ("착빙성 안개", "Freezing fog"),
+    51: ("약한 이슬비", "Light drizzle"),
+    53: ("이슬비", "Drizzle"),
+    55: ("강한 이슬비", "Heavy drizzle"),
+    61: ("약한 비", "Light rain"),
+    63: ("비", "Rain"),
+    65: ("강한 비", "Heavy rain"),
+    71: ("약한 눈", "Light snow"),
+    73: ("눈", "Snow"),
+    75: ("강한 눈", "Heavy snow"),
+    80: ("소나기", "Rain showers"),
+    81: ("강한 소나기", "Heavy showers"),
+    82: ("매우 강한 소나기", "Violent showers"),
+    95: ("뇌우", "Thunderstorm"),
+    96: ("우박 동반 뇌우", "Thunderstorm with hail"),
+    99: ("강한 우박 동반 뇌우", "Heavy hail thunderstorm"),
 }
 
 def weather_description(code, language):
@@ -449,17 +457,17 @@ def weather_description(code, language):
     if not entry:
         return t("unknown")
 
-    if language in entry:
-        return entry[language]
+    if language == "ko":
+        return entry[0]
 
-    english = entry.get("en", "")
-    return translate_text(english, language)
+    if language == "en":
+        return entry[1]
+
+    return translate_text(entry[1], language)
 
 def assess_weather(current, visibility):
-    code = current.get("weather_code", -1)
-
     try:
-        code = int(code)
+        code = int(current.get("weather_code", -1))
     except Exception:
         code = -1
 
@@ -544,7 +552,7 @@ h1,h2,h3,p,label,span {color:#edf4ff;}
     border:1px solid #2b4b70;
     border-radius:16px;
     padding:16px;
-    min-height:130px;
+    min-height:110px;
     margin-bottom:8px;
 }
 .recommend-name {font-size:15px;font-weight:700;color:white;}
@@ -571,11 +579,11 @@ footer {visibility:hidden;}
 """, unsafe_allow_html=True)
 
 # -------------------------------
-# Header
+# Header and language
 # -------------------------------
-left, right = st.columns([5, 1.4], vertical_alignment="center")
+header_left, header_right = st.columns([5, 1.4], vertical_alignment="center")
 
-with right:
+with header_right:
     st.selectbox(
         "Language",
         list(LANGUAGES.keys()),
@@ -584,7 +592,9 @@ with right:
         label_visibility="collapsed",
     )
 
-with left:
+lang = st.session_state.language
+
+with header_left:
     st.markdown(
         f'<div class="hero">'
         f'<div class="hero-title">✈️ AIR SAFE</div>'
@@ -593,10 +603,8 @@ with left:
         unsafe_allow_html=True,
     )
 
-lang = st.session_state.language
-
 # -------------------------------
-# Load airport list
+# Load airports
 # -------------------------------
 try:
     with st.spinner(t("loading")):
@@ -615,18 +623,19 @@ country_names = sorted(country_map.keys(), key=str.casefold)
 
 default_country = next(
     (name for name, code in country_map.items() if code == "KR"),
-    country_names[0]
+    country_names[0],
 )
 
 st.markdown(
     f'<div class="section-title">🌍 {t("country")}</div>',
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 country_display = st.selectbox(
     t("country"),
     country_names,
     index=country_names.index(default_country),
+    key="country_selector",
 )
 
 country_code = country_map[country_display]
@@ -642,11 +651,16 @@ if country_airports.empty:
 st.caption(f'{t("count")}: {len(country_airports):,}')
 
 # -------------------------------
-# Search airports in Korean and other languages
+# Search
+# IMPORTANT: clear_search is handled BEFORE text_input is created.
 # -------------------------------
+if st.session_state.get("clear_search", False):
+    st.session_state["airport_search"] = ""
+    st.session_state["clear_search"] = False
+
 st.markdown(
     f'<div class="section-title">🔎 {t("search")}</div>',
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 query_text = st.text_input(
@@ -657,39 +671,36 @@ query_text = st.text_input(
 
 filtered = country_airports.copy()
 
+KOREAN_AIRPORT_ALIASES = {
+    "인천": ["incheon"],
+    "인천공항": ["incheon"],
+    "인천국제공항": ["incheon"],
+    "김포": ["gimpo"],
+    "김포공항": ["gimpo"],
+    "김포국제공항": ["gimpo"],
+    "제주": ["jeju"],
+    "제주공항": ["jeju"],
+    "제주국제공항": ["jeju"],
+    "김해": ["gimhae", "busan"],
+    "김해공항": ["gimhae", "busan"],
+    "부산": ["busan", "gimhae"],
+    "대구": ["daegu"],
+    "청주": ["cheongju"],
+    "광주": ["gwangju"],
+    "양양": ["yangyang"],
+    "울산": ["ulsan"],
+    "여수": ["yeosu"],
+    "포항": ["pohang"],
+    "원주": ["wonju"],
+    "군산": ["gunsan"],
+}
+
 if query_text:
     query_terms = {query_text.casefold()}
 
-    # Translate the search term into English, e.g. 인천 -> Incheon
-    if lang != "en":
-        translated_query = translate_query_to_english(query_text, lang)
-        if translated_query:
-            query_terms.add(translated_query.casefold())
-
-    # Common Korean airport names help when translation is unavailable
-    KOREAN_AIRPORT_ALIASES = {
-        "인천": ["incheon"],
-        "인천공항": ["incheon"],
-        "인천국제공항": ["incheon"],
-        "김포": ["gimpo"],
-        "김포공항": ["gimpo"],
-        "김포국제공항": ["gimpo"],
-        "제주": ["jeju"],
-        "제주공항": ["jeju"],
-        "제주국제공항": ["jeju"],
-        "김해": ["gimhae", "busan"],
-        "김해공항": ["gimhae", "busan"],
-        "부산": ["busan", "gimhae"],
-        "대구": ["daegu"],
-        "청주": ["cheongju"],
-        "광주": ["gwangju"],
-        "양양": ["yangyang"],
-        "울산": ["ulsan"],
-        "여수": ["yeosu"],
-        "포항": ["pohang"],
-        "원주": ["wonju"],
-        "군산": ["gunsan"],
-    }
+    translated_query = translate_query_to_english(query_text, lang)
+    if translated_query:
+        query_terms.add(translated_query.casefold())
 
     for korean_name, english_names in KOREAN_AIRPORT_ALIASES.items():
         if korean_name in query_text:
@@ -697,33 +708,22 @@ if query_text:
 
     mask = pd.Series(False, index=filtered.index)
 
-    search_columns = [
-        "name",
-        "municipality",
-        "iata_code",
-        "gps_code",
-        "ident",
-    ]
-
-    for column in search_columns:
+    for column in [
+        "name", "municipality", "iata_code", "gps_code", "ident"
+    ]:
         values = filtered[column].fillna("").astype(str).str.casefold()
 
         for term in query_terms:
-            mask |= values.str.contains(
-                term,
-                regex=False,
-                na=False,
-            )
+            mask |= values.str.contains(term, regex=False, na=False)
 
     filtered = filtered[mask].copy()
 
-    # If the user searches a translated airport name, check localized names too.
-    # Limit extra translation work to avoid translating every airport.
+    # If direct matching fails, search translated names among a limited
+    # number of airports to reduce translation requests.
     if filtered.empty and lang != "en":
-        candidates = country_airports.head(250)
-        translated_matches = []
+        matches = []
 
-        for idx, row in candidates.iterrows():
+        for idx, row in country_airports.head(250).iterrows():
             translated_name = translate_text(row["name"], lang)
             translated_city = translate_text(row["municipality"], lang)
 
@@ -731,23 +731,17 @@ if query_text:
                 query_text.casefold() in translated_name.casefold()
                 or query_text.casefold() in translated_city.casefold()
             ):
-                translated_matches.append(idx)
+                matches.append(idx)
 
-        if translated_matches:
-            filtered = country_airports.loc[translated_matches].copy()
-
-if filtered.empty:
-    st.info(t("no_match"))
-    st.stop()
-
-filtered = filtered.head(100).copy()
+        if matches:
+            filtered = country_airports.loc[matches].copy()
 
 # -------------------------------
-# Recommended airports
+# Recommendations
 # -------------------------------
 st.markdown(
-    f'<div class="section-title">{t("recommend")}</div>',
-    unsafe_allow_html=True
+    f'<div class="section-title">⭐ {t("recommend")}</div>',
+    unsafe_allow_html=True,
 )
 st.caption(t("recommend_desc"))
 
@@ -761,7 +755,6 @@ recommendations["_rank"] = recommendations["type"].map({
 
 recommendations["_scheduled"] = (
     recommendations["scheduled_service"]
-    .astype(str)
     .str.lower()
     .eq("yes")
     .astype(int)
@@ -772,14 +765,13 @@ recommendations = recommendations.sort_values(
     ascending=[True, False, True],
 ).head(6)
 
-columns = st.columns(3)
+recommendation_cols = st.columns(3)
 
 for i, (idx, row) in enumerate(recommendations.iterrows()):
-    with columns[i % 3]:
+    with recommendation_cols[i % 3]:
         st.markdown(
             f'<div class="recommend-card">'
-            f'<div class="recommend-name">✈️ '
-            f'{airport_label(row, lang)}</div>'
+            f'<div class="recommend-name">✈️ {airport_label(row, lang)}</div>'
             f'<div class="recommend-meta">'
             f'{str(row["type"]).replace("_", " ").title()}'
             f'</div></div>',
@@ -792,18 +784,19 @@ for i, (idx, row) in enumerate(recommendations.iterrows()):
             use_container_width=True,
         ):
             st.session_state.chosen_ident = str(row["ident"])
-            st.session_state.airport_search = ""
+            st.session_state.clear_search = True
             st.rerun()
 
 # -------------------------------
 # Airport selection
 # -------------------------------
-st.markdown(
-    f'<div class="section-title">📍 {t("airport")}</div>',
-    unsafe_allow_html=True
-)
+if filtered.empty:
+    st.info(t("no_match"))
+    st.stop()
 
-# A recommended airport remains selectable even if it is outside search results.
+filtered = filtered.head(100).copy()
+
+# Include the chosen airport even if it is not in the current search results.
 if st.session_state.chosen_ident:
     chosen_row = country_airports[
         country_airports["ident"].astype(str)
@@ -816,7 +809,12 @@ if st.session_state.chosen_ident:
             filtered = pd.concat([
                 chosen_row,
                 filtered,
-            ]).loc[lambda x: ~x.index.duplicated(keep="first")]
+            ]).loc[lambda df: ~df.index.duplicated(keep="first")]
+
+st.markdown(
+    f'<div class="section-title">📍 {t("airport")}</div>',
+    unsafe_allow_html=True,
+)
 
 label_to_index = {}
 
@@ -824,12 +822,11 @@ for idx, row in filtered.iterrows():
     label = airport_label(row, lang)
 
     if label in label_to_index:
-        label += f" · {row['ident']}"
+        label = f"{label} · {row['ident']}"
 
     label_to_index[label] = idx
 
 labels = list(label_to_index.keys())
-
 default_index = 0
 
 if st.session_state.chosen_ident:
@@ -843,16 +840,18 @@ selected_label = st.selectbox(
     t("airport"),
     labels,
     index=default_index,
+    key="airport_selector",
 )
 
 selected_airport = filtered.loc[label_to_index[selected_label]]
+st.session_state.chosen_ident = str(selected_airport["ident"])
 
 # -------------------------------
 # Airport details
 # -------------------------------
 st.markdown(
     f'<div class="section-title">🛫 {t("info")}</div>',
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 iata = str(selected_airport.get("iata_code", "")).strip()
@@ -874,9 +873,9 @@ details = [
     (t("country"), country_display),
 ]
 
-cols = st.columns(4)
+detail_cols = st.columns(4)
 
-for col, (label, value) in zip(cols, details):
+for col, (label, value) in zip(detail_cols, details):
     with col:
         st.markdown(
             f'<div class="metric-card">'
@@ -887,11 +886,11 @@ for col, (label, value) in zip(cols, details):
         )
 
 # -------------------------------
-# Weather
+# Weather information
 # -------------------------------
 st.markdown(
     f'<div class="section-title">🌦️ {t("weather")}</div>',
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 latitude = selected_airport.get("latitude_deg")
@@ -899,7 +898,6 @@ longitude = selected_airport.get("longitude_deg")
 
 try:
     current, visibility = fetch_weather(latitude, longitude)
-
     status = assess_weather(current, visibility)
 
     if status == "danger":
@@ -929,7 +927,7 @@ try:
         ("🌬️", t("gust"), fmt(current.get("wind_gusts_10m"), " km/h")),
         ("👁️", t("visibility"), fmt(
             visibility / 1000 if visibility is not None else None,
-            " km"
+            " km",
         )),
         ("💧", t("humidity"), fmt(current.get("relative_humidity_2m"), "%", 0)),
         ("☁️", t("cloud"), fmt(current.get("cloud_cover"), "%", 0)),
@@ -939,10 +937,10 @@ try:
         ("📈", t("pressure"), fmt(current.get("pressure_msl"), " hPa")),
     ]
 
-    cols = st.columns(4)
+    metric_cols = st.columns(4)
 
     for i, (emoji, label, value) in enumerate(metrics):
-        with cols[i % 4]:
+        with metric_cols[i % 4]:
             st.markdown(
                 f'<div class="metric-card">'
                 f'<div class="metric-label">{emoji} {label}</div>'
@@ -965,8 +963,8 @@ except Exception:
 # -------------------------------
 try:
     st.markdown(
-        f'<div class="section-title">🗺️ {t("info")}</div>',
-        unsafe_allow_html=True
+        f'<div class="section-title">🗺️ {t("map")}</div>',
+        unsafe_allow_html=True,
     )
 
     st.map(
@@ -977,8 +975,6 @@ try:
         zoom=8,
     )
 except Exception:
-    pass
+    st.info(t("unknown"))
 
-st.caption(
-    f'{t("source")}: OurAirports · Open-Meteo'
-)
+st.caption(f'{t("source")}: OurAirports · Open-Meteo')
